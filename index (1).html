@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Symbol Table Generator</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>🔤 Symbol Table Generator</h1>
+  <p>Paste C-like code. The table updates as you type; click any row or error to jump to its line.</p>
+</header>
+<main>
+  <section class="card">
+    <div class="bar"><h2>Source</h2><button id="demo">Load demo</button><button id="clear">Clear</button></div>
+    <textarea id="src" spellcheck="false" aria-label="Source code"></textarea>
+  </section>
+  <section class="card">
+    <div class="bar"><h2>Symbol table</h2>
+      <button class="on" data-v="table">Table</button><button data-v="json">JSON</button><button data-v="csv">CSV</button>
+      <button id="copy">Copy</button>
+    </div>
+    <div class="stats" id="stats"></div>
+    <div class="tools" id="tools">
+      <input id="q" placeholder="Filter by name, type or scope…" aria-label="Filter">
+      <select id="cat" aria-label="Category"><option value="">All categories</option><option>variable</option><option>array</option><option>function</option><option>parameter</option></select>
+    </div>
+    <div class="scroll" id="view"></div>
+    <div class="errs ok" id="errs"></div>
+    <div class="hint">Supports variables, arrays, pointers, functions, parameters, nested scopes, and flags redeclarations and undeclared identifiers.</div>
+  </section>
+</main>
+<script src="script.js"></script>
+</body>
+</html>
